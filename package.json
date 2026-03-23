@@ -24,5 +24,10 @@
   "packageManager": "pnpm@10.6.0",
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "next": "^15.5.14",
+    "react": "^19.0.0",
+    "tailwindcss": "^4.2.2"
   }
 }
