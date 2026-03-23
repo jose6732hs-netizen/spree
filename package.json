@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "docker compose up -d && turbo dev",
+    "dev": "turbo dev",
     "build": "turbo build",
     "test": "turbo test",
     "lint": "turbo lint",
@@ -15,8 +15,7 @@
     "server:logs": "cd server && tail -f log/development.log",
     "server:seed": "cd server && bin/rails db:seed",
     "server:load_sample_data": "cd server && bin/rails spree:load_sample_data",
-    "server:up": "docker compose up -d",
-    "server:down": "docker compose down"
+    "start": "next start"
   },
   "devDependencies": {
     "turbo": "^2.5.0"
@@ -24,5 +23,12 @@
   "packageManager": "pnpm@10.6.0",
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "lucide-react": "^1.0.1",
+    "next": "^15.5.14",
+    "react": "^19.0.0",
+    "recharts": "^3.8.0",
+    "tailwindcss": "^4.2.2"
   }
 }
