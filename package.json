@@ -16,7 +16,15 @@
     "server:seed": "cd server && bin/rails db:seed",
     "server:load_sample_data": "cd server && bin/rails spree:load_sample_data",
     "server:up": "docker compose up -d",
-    "server:down": "docker compose down"
+    "server:down": "docker compose down",
+    "saas:dev": "pnpm dev",
+    "saas:build": "pnpm build",
+    "saas:start": "pnpm start",
+    "saas:docker:up": "docker-compose up -d",
+    "saas:docker:down": "docker-compose down",
+    "saas:docker:logs": "docker-compose logs -f",
+    "saas:db:backup": "pg_dump $DATABASE_URL > backup-$(date +%Y%m%d-%H%M%S).sql",
+    "saas:setup": "pnpm install && cp .env.example .env.local && echo 'Setup concluído! Execute: pnpm saas:docker:up && pnpm saas:dev'"
   },
   "devDependencies": {
     "turbo": "^2.5.0"
@@ -26,8 +34,10 @@
     "node": ">=20"
   },
   "dependencies": {
+    "lucide-react": "^1.0.1",
     "next": "^15.5.14",
     "react": "^19.0.0",
+    "recharts": "^3.8.0",
     "tailwindcss": "^4.2.2"
   }
 }
